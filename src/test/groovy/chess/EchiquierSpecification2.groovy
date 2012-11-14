@@ -15,8 +15,6 @@ class EchiquierSpecification2 extends Specification {
   Echiquier echiquier = new Echiquier()
   IPiece piece = Mock()
 
-
-  @Unroll
   def "Interaction echiquier piece"() {
 
     when:
