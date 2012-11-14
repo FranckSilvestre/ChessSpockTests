@@ -37,7 +37,7 @@ class Echiquier {
    * @param positionVert
    * @return la pièce ou null
    */
-  Piece get(Integer positionHor, Integer positionVert) {
+  IPiece get(Integer positionHor, Integer positionVert) {
     grille[positionHor - ((int) "a")][positionVert - 1]
   }
 
@@ -54,13 +54,28 @@ class Echiquier {
     if (!piece) {
       return false
     }
-    def depOk = piece.bouge(deplHor, deplVert)
-    if (!depOk) {
-      return false
-    }
-    grille[posHor- ((int) "a")][posVer-1] = null
-    grille[piece.positionHorizontale - ((int) "a")][piece.positionVerticale - 1] = piece
-    true
+    deplacePiece(piece,deplHor,deplVert)
   }
+
+  /**
+     * Déplace une plièce sur l'échiquier
+     * @param posHor
+     * @param posVer
+     * @param deplHor
+     * @param deplVert
+     * @return truee si déplaceement OK, false sinon
+     */
+    Boolean deplacePiece(IPiece piece, Integer deplHor, Integer deplVert) {
+      def posHor = piece.positionHorizontale
+      def posVer = piece.positionVerticale
+      def depOk = piece.bouge(deplHor, deplVert)
+      if (!depOk) {
+        return false
+      }
+      grille[posHor- ((int) "a")][posVer-1] = null
+      grille[piece.positionHorizontale - ((int) "a")][piece.positionVerticale - 1] = piece
+      true
+    }
+
 
 }

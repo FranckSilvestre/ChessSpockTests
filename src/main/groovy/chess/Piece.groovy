@@ -7,7 +7,7 @@ import groovy.transform.ToString
  * @author franck Silvestre
  */
 @ToString(includeNames=true)
-abstract class Piece {
+abstract class Piece implements IPiece {
 
   PieceCouleur pieceCouleur
 
