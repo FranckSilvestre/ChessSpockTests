@@ -41,7 +41,7 @@ class EchiquierSpecification extends Specification {
     "d"    | 2       | true        | BLANC   | Pion.class
     "a"    | 7       | true        | NOIR    | Pion.class
     "d"    | 7       | true        | NOIR    | Pion.class
-    "a"    | 3       | false       | _       | _
+    "a"    | 3       | false       | NOIR    | Pion.class
 
   }
 

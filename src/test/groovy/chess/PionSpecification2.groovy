@@ -16,7 +16,8 @@ class PionSpecification2 extends Specification {
   def "deplacement du pion"() {
 
     expect:
-    new Pion(positionHorizontale: posHor, positionVerticale: posVer, pieceCouleur: couleur).bouge(depHor, depVer) == depCorrect
+    new Pion(positionHorizontale: posHor, positionVerticale: posVer,
+             pieceCouleur: couleur).bouge(depHor, depVer) == depCorrect
 
     where:
     couleur | posHor | posVer | depHor | depVer | depCorrect
